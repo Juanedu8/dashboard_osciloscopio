@@ -1,0 +1,68 @@
+test_ack_report_reset_on_config (test_40k_and_hardware.TestBonusAndStatus.test_ack_report_reset_on_config) ... ok
+test_bonus_40k_simulated (test_40k_and_hardware.TestBonusAndStatus.test_bonus_40k_simulated) ... ok
+test_bonus_external_data (test_40k_and_hardware.TestBonusAndStatus.test_bonus_external_data) ... ok
+test_report_invalid (test_40k_and_hardware.TestBonusAndStatus.test_report_invalid) ... ok
+test_a_initial_defaults_and_status (test_api.APITest.test_a_initial_defaults_and_status) ... ok
+test_bad_config_is_rejected (test_api.APITest.test_bad_config_is_rejected) ... ok
+test_configurable_rates_and_window (test_api.APITest.test_configurable_rates_and_window) ... ok
+test_static_web (test_api.APITest.test_static_web) ... ok
+test_window_sizes_and_refresh (test_api.APITest.test_window_sizes_and_refresh) ... ok
+test_change_configuration_requires_new_matching_frame (test_external.ExternalIntegrationTest.test_change_configuration_requires_new_matching_frame) ... ok
+test_emulator_sends_real_http_frames (test_external.ExternalIntegrationTest.test_emulator_sends_real_http_frames) ... [HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 503 -
+[HTTP] 127.0.0.1 - "GET /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[EMU] Conectando a http://127.0.0.1:39747; emulacion externa, NO SPI real
+[HTTP] 127.0.0.1 - "GET /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[EMU] ventana #1 enviada: 64 muestras/canal, Fs=100 Sa/s
+[HTTP] 127.0.0.1 - "GET /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[EMU] ventana #2 enviada: 64 muestras/canal, Fs=100 Sa/s
+ok
+test_end_to_end_input_to_dashboard_output (test_external.ExternalIntegrationTest.test_end_to_end_input_to_dashboard_output) ... ok
+test_initially_no_samples_and_status (test_external.ExternalIntegrationTest.test_initially_no_samples_and_status) ... ok
+test_rejects_bad_frames_and_duplicate_sequences (test_external.ExternalIntegrationTest.test_rejects_bad_frames_and_duplicate_sequences) ... ok
+test_stale_data_is_not_presented_as_live (test_external.ExternalIntegrationTest.test_stale_data_is_not_presented_as_live) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.784s
+
+OK
+[EMU] Finalizado. El servidor detectara que los datos quedan obsoletos.
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 503 -
+[HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 400 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 400 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 400 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 400 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 400 -
+[HTTP] 127.0.0.1 - "POST /api/config HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "POST /api/ingest HTTP/1.1" 200 -
+[HTTP] 127.0.0.1 - "GET /api/muestras HTTP/1.1" 503 -
+[HTTP] 127.0.0.1 - "GET /api/estado HTTP/1.1" 200 -
+test_40k_two_channels_and_crc (test_spi_protocol.TestProtocol.test_40k_two_channels_and_crc) ... ok
+test_command_binary_header (test_spi_protocol.TestProtocol.test_command_binary_header) ... ok
+test_no_data (test_spi_protocol.TestProtocol.test_no_data) ... ok
+test_spi_reader_fake_config_then_data (test_spi_protocol.TestProtocol.test_spi_reader_fake_config_then_data) ... ok
+test_tampered_crc_fails (test_spi_protocol.TestProtocol.test_tampered_crc_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

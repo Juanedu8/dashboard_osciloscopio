@@ -1,0 +1,14 @@
+ID,Requisito,Modo de verificacion,Valor esperado,Responsable,Estado inicial,Evidencia o resultado real
+WEB-01,API HTTP JSON en Windows,unittest 15 casos,15/15 aprobadas,Dashboard,Por verificar en copia,Adjuntar salida tests
+WEB-02,Dos señales artificiales,PRUEBA_SIN_RASPBERRY.bat,2 canales y graficas,Dashboard,Por verificar visualmente,Captura navegador
+WEB-03,Refresco 0.25 a 1 Hz,Cronometraje navegador 1 2 4 segundos,1-4 segundos,Dashboard,Por verificar físicamente,Captura video o medicion
+SPI-01,PING y ACK ESP32,probar_spi_fisico.py,confirma tasa/ventana,Integrador SPI,Pendiente de hardware,Log terminal
+SPI-02,CRC integridad,100 ventanas >=2MHz,0 CRC incorrectos,Integrador SPI,Pendiente de hardware,Log y contador
+ADC-01,2 ADC analógicos,Generador funciones y osciloscopio,2 señales medibles,Firmware,Pendiente de hardware,Foto/video
+ADC-02,100 Sa/s por canal,Instrumento referencia,Nominal con error medido,Firmware,Pendiente de hardware,Tabla medidas
+ADC-03,1000 Sa/s por canal,Instrumento referencia,Nominal con error medido,Firmware,Pendiente de hardware,Tabla medidas
+ADC-04,10000 Sa/s por canal,Instrumento referencia,Nominal con error medido,Firmware,Pendiente de hardware,Tabla medidas
+ADC-05,40000 Sa/s por canal BONO,Instrumento referencia y conteos,>=40000 Sa/s verificadas por canal,Firmware,Pendiente experimental,Medidas y calculos
+SBC-01,Nginx en Raspberry y acceso remoto,Abrir desde otro equipo LAN,Dashboard visible por HTTP,SBC,Pendiente de hardware,URL IP local captura
+INT-01,Control de Fs via SPI,Interfaz + ACK ESP32,Fs aplicado físicamente,Equipo completo,Pendiente de hardware,Video y log
+INT-02,Cambio a 40k via SPI,Interfaz + ACK y medicion,Fs física validada,Equipo completo,Pendiente experimental,Medidas y video

@@ -1,0 +1,17 @@
+[Unit]
+Description=PulseScope - SPI ADC ESP32 a API
+After=pulsescope-api.service
+Requires=pulsescope-api.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/dashboard_osciloscopio/real/raspberry
+ExecStart=/usr/bin/python3 /opt/dashboard_osciloscopio/real/raspberry/ejecutar_spi_real.py --spi-hz 2000000 --ready-gpio 24
+Restart=on-failure
+RestartSec=5
+SupplementaryGroups=spi gpio
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

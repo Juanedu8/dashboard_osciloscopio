@@ -1,0 +1,30 @@
+# EJEMPLO para Raspberry Pi (adaptar ruta y permisos antes de activarlo).
+# El proceso Python local escucha en 127.0.0.1:8000; nginx sirve la web.
+server {
+    listen 80;
+    server_name _;
+    root /opt/dashboard_osciloscopio/web;
+    index index.html;
+
+    # El adaptador SPI del SBC publica directamente en 127.0.0.1:8000/api/ingest.
+    # Nunca exponer el endpoint de escritura a navegadores externos.
+    location = /api/ingest {
+        return 403;
+    }
+    # Solo el adaptador SPI que corre localmente debe escribir telemetría.
+    location = /api/hardware {
+        return 403;
+    }
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_http_version 1.1;
+        add_header Cache-Control "no-store" always;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

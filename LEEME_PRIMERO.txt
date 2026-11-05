@@ -1,0 +1,24 @@
+PULSESCOPE - PRUEBA CONSERVADA + INTEGRACION REAL
+
+1) Para probar SIN RASPBERRY en Windows:
+   - Doble clic PRUEBA_SIN_RASPBERRY.bat
+   - Abrir http://127.0.0.1:8000
+   - Elegir 100 / 1000 / 10000 / 40000 (experimental)
+   - Las señales son artificiales, NO un ADC real.
+
+2) Para comprobar pruebas automatizadas:
+   python -m unittest discover -s tests -v
+   python -m unittest discover -s real/tests -v
+
+3) Para montaje real:
+   Leer real/docs/GUIA_IMPLEMENTACION_REAL.md (primero el pinout M5).
+   ESP32 IDF: real/esp32_idf/ (programa ADC DMA + SPI slave).
+   Raspberry: real/raspberry/ (SPI master + API POST).
+   Instalacion Nginx/systemd: real/deploy/preparar_servicios.sh
+
+4) 40.000 Sa/s por CANAL:
+   real/docs/BONIFICACION_40000.md y protocolo real/docs/PROTOCOLO_SPI_PSC1.md.
+   NO se afirma velocidad real sin pruebas experimentales.
+
+IMPORTANTE: no conectar pines ESP32 desde una tabla del chip sin verificar
+el ESQUEMATICO y modelo exacto de la placa M5Stack.

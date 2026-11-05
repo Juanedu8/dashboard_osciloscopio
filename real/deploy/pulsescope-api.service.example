@@ -1,0 +1,15 @@
+[Unit]
+Description=PulseScope - backend API (modo externo)
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/dashboard_osciloscopio
+ExecStart=/usr/bin/python3 /opt/dashboard_osciloscopio/server.py --source external --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
